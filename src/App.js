@@ -15,7 +15,9 @@ function App() {
   console.log(a.format("HH:mm:ss")); // 24 hour time
   console.log(a.format("hh:mm:ss")); // 12 hour time
   console.log(a.format("hh:mm A")); // 12 hour time with am/pm
-  
+  //UNIX TIME STAMP
+  console.log(a.format("X")); //timestamp in seconds
+  console.log(a.format("x")); //in milliseconds
   return (
     <div className="App">
       <h1>Moment Js</h1>
