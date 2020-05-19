@@ -18,6 +18,32 @@ function App() {
   //UNIX TIME STAMP
   console.log(a.format("X")); //timestamp in seconds
   console.log(a.format("x")); //in milliseconds
+  
+  //time 15minute interval
+  
+  function intervals(startString, endString) {
+    var start = moment(startString, 'YYYY-MM-DD hh:mm a');
+    var end = moment(endString, 'YYYY-MM-DD hh:mm a');
+    
+    // round starting minutes up to nearest 15 (12 --> 15, 17 --> 30)
+    // note that 59 will round up to 60, and moment.js handles that correctly
+    start.minutes(Math.ceil(start.minutes() / 15) * 15);
+    
+    var result = [];
+    
+    var current = moment(start);
+    
+    while (current <= end) {
+      result.push(current.format('YYYY-MM-DD HH:mm'));
+      current.add(15, 'minutes');
+    }
+    
+    return result;
+  }
+  
+  console.log(intervals('2016-08-10 4:35:00 PM', '2016-08-10 8:06:00 PM'));
+  
+  
   return (
     <div className="App">
       <h1>Moment Js</h1>
