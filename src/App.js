@@ -43,7 +43,6 @@ function App() {
   
   console.log(intervals('2016-08-10 4:35:00 PM', '2016-08-10 8:06:00 PM'));
   
-  
   return (
     <div className="App">
       <h1>Moment Js</h1>
